@@ -1,0 +1,10 @@
+Script started on Friday 18 August 2017 01:29:49 PM IST
+]0;student@HP-Compaq: ~/Documents/16IT230/unix/lab2[01;32mstudent@HP-Compaq[00m:[01;34m~/Documents/16IT230/unix/lab2[00m$ ls
+b.txt  [0m[01;32mp1.sh[0m  typescript
+]0;student@HP-Compaq: ~/Documents/16IT230/unix/lab2[01;32mstudent@HP-Compaq[00m:[01;34m~/Documents/16IT230/unix/lab2[00m$ ls
+b.txt  [0m[01;32mp1.sh[0m  typescript
+]0;student@HP-Compaq: ~/Documents/16IT230/unix/lab2[01;32mstudent@HP-Compaq[00m:[01;34m~/Documents/16IT230/unix/lab2[00m$ ls
+b.txt  [0m[01;32mp1.sh[0m  typescript
+]0;student@HP-Compaq: ~/Documents/16IT230/unix/lab2[01;32mstudent@HP-Compaq[00m:[01;34m~/Documents/16IT230/unix/lab2[00m$ exit
+
+Script done on Friday 18 August 2017 01:31:21 PM IST
