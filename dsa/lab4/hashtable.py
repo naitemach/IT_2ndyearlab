@@ -2,8 +2,8 @@ class HashTable(object):
 	def __init__(self):
 		self.t=[None for i in range(30)]
 	def insertKey(self,key,value):
-		value=hashvalue(key)
-		slot=value%30
+		val=hashvalue(key)
+		slot=val%30
 		if self.t[slot]==None:
 			self.t[slot]=LinkedList()
 		self.t[slot].insertAtHead(key,value)
