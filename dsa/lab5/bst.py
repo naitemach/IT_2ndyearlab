@@ -69,7 +69,7 @@ class Bst:
 		temp=n
 		if n.leftchild!=None:
 			self.traverse(n.leftchild)	
-		print(temp.key)
+		print(temp.key,end=" ")
 		if n.rightchild!=None:
 			self.traverse(n.rightchild)
 
@@ -88,7 +88,7 @@ def main():
 	print(t.search(500))
 	print(t.minimum())
 	print(t.maximum())
-	print(t.traverse(t.root))
+	t.traverse(t.root)
 if __name__ == '__main__' :
 	main()
 
