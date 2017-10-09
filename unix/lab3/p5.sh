@@ -1,6 +1,5 @@
 #!/bin/bash
-echo "enter the number"
-read n
+
 for ((i=1;i<=1000;i++))
 do
    j=$i
@@ -9,7 +8,7 @@ do
    do
      r=`expr $j % 10`
      j=`expr $j / 10`
-     rc=`expr r \* r \* r`
+     rc=`expr $r \* $r \* $r`
      c=`expr $c + $rc`
     done 
     if [ $c -eq $i ]

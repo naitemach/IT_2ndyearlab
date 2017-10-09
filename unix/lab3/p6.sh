@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ls | cat > a.txt
 a=`cat a.txt`
 f=0
