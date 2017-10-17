@@ -1,3 +1,4 @@
+#!/bin/bash
 echo -n "Enter number : "
 read n
  
@@ -7,9 +8,7 @@ len=$(( $len - 1 ))
 echo "Your number $n in words : "
 for (( i=1; i<=$len; i++ ))
 do
- 
     digit=$(echo $n | cut -c $i)
-
     case $digit in
         0) echo -n "zero " ;;
         1) echo -n "one " ;;
@@ -23,5 +22,6 @@ do
         9) echo -n "nine " ;;
     esac 
 done
+ 
 
 echo ""
