@@ -40,52 +40,38 @@ class MaxHeap(object):
 		if self.size >= 1:
 			temp=self.array[1]
 			self.array[1]=self.array[self.size]
+			self.array[self.size]=temp
 			self.size -= 1
 			self.heapify(1)
 			return temp
 		else:
 			print("empty heap")
+	def heapSort(self):
+		for i in range(1,self.size):
+			self.extractMax()
 
-h=MaxHeap(5)
-h.array[1]=4
-h.array[2]=2
-h.array[3]=6
-h.array[4]=1
-h.array[5]=8
-h.buildHeap()
-for i in range(1,h.size+1):
-	print(h.array[i],end=" ")
-print(" ")
+def main():
+	n = int(input("Enter the number of elements to be sorted: "))
+	h=MaxHeap(n)
+	for i in range(1,n+1):
+		e=int(input())
+		h.array[i]=e
+	
+	h.buildHeap()
+	
+	print("Before sorting")
+	for i in range(1,h.size+1):
+		print(h.array[i],end=" ")
+	print(" ")
+	
+	h.heapSort()
+	
+	print("After Sorting")
+	for i in range(1,n+1):
+		print(h.array[i],end=" ")
+	print(" ")
 
+if __name__ == '__main__':
+	main()
 
-print("Extracting maximum")
-print(h.extractMax())
-print("Heap after extracting")
-for i in range(1,h.size+1):
-	print(h.array[i],end=" ")
-print(" ")
-
-print("Extracting maximum")
-print(h.extractMax())
-print("Heap after extracting")
-for i in range(1,h.size+1):
-	print(h.array[i],end=" ")
-print(" ")
-
-print("Extracting maximum")
-print(h.extractMax())
-print("Heap after extracting")
-for i in range(1,h.size+1):
-	print(h.array[i],end=" ")
-print(" ")
-
-print("Extracting maximum")
-print(h.extractMax())
-print("Heap after extracting")
-for i in range(1,h.size+1):
-	print(h.array[i],end=" ")
-print(" ")
-
-print("Extracting maximum")
-print(h.extractMax())
 
