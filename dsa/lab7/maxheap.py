@@ -45,6 +45,9 @@ class MaxHeap(object):
 			return temp
 		else:
 			print("empty heap")
+	def maximum(self):
+		return self.array[1]
+
 
 h=MaxHeap(5)
 h.array[1]=4
@@ -52,6 +55,7 @@ h.array[2]=2
 h.array[3]=6
 h.array[4]=1
 h.array[5]=8
+print(h.array[0])
 h.buildHeap()
 for i in range(1,h.size+1):
 	print(h.array[i],end=" ")
