@@ -19,18 +19,21 @@ class Trie(object):
 		temp = self.root
 		for i in key:
 			index = self.charToIndex(i)
-			if temp.children[index] == i:
-				if temp.isEndOfWord:
-					return True
-				else:
-					continue
-			else:
+			if not temp.children[index]:
 				return False
+			temp = temp.children[index]
+		return temp != None and temp.isEndOfWord
 
 def main():
 	t=Trie()
-	t.insert("today")
-	print(t.search("today"))
+	keys = ["the","a","there","answer","any","by","their"]
+	output = ["Not present in trie","Present in tire"]
+	for key in keys:
+		t.insert(key)
+	print("{}-{}".format("the",output[t.search("the")]))
+	print("{}-{}".format("these",output[t.search("these")]))
+	print("{}-{}".format("their",output[t.search("their")]))
+	print("{}-{}".format("ans",output[t.search("ans")]))
 
 if __name__ == '__main__':
 	main()
