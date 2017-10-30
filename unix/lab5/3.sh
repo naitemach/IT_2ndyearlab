@@ -25,7 +25,6 @@ do
 			echo "Enter the rollno"
 			read r
 			l=`grep -n -i $r database.txt | cut -f1 -d:`
-			e=`expr $l + 5`
 			for((i=1;i<=6;i++))
 			do
 			sed -i "${l}d" database.txt
@@ -41,6 +40,12 @@ do
 			else
 				echo "Record Not Found"
 			fi
+			l=`grep -n -i $r database.txt | cut -f1 -d:`
+			e=`expr $l + 5`
+			for((i=l;i<=e;i++))
+			do
+			sed -n "${i}p" database.txt
+			done
 			;;
 		Exit)
 			exit
