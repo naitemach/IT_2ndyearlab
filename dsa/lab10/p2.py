@@ -1,6 +1,13 @@
+class Node:
+	def __init__ (self,l):
+		self.label=l
+		self.color=None
+		self.dist=None
+		self.pred=None
+
 class MinHeap(object):
 	def __init__(self,n):
-		self.array = [None for i in range(1,n+2)]
+		self.array = [Node(i) for i in range(1,n+2)]
 		self.size = n
 	def getLeft(self,i):
 		return self.array[2*i].dist
@@ -59,12 +66,7 @@ class MinHeap(object):
 		if parent//2 > 1:
 			self.updatePriority(parent//2)
 
-class Node:
-	def __init__ (self,l):
-		self.label=l
-		self.color=None
-		self.dist=None
-		self.pred=None
+
 
 class Graph:
 	def __init__ (self,n,m):
@@ -83,7 +85,7 @@ class Graph:
 			n1=int(s[0])
 			n2=int(s[1])
 			self.am[n1][n2] = 1
-			self.am[n1][n2] = int(s[2])
+			self.ew[n1][n2] = int(s[2])
 
 		for i in range(self.nv):
 			for j in range(self.nv):
@@ -114,7 +116,7 @@ class Graph:
 			h.array[temp]=i
 			temp += 1
 		h.buildHeap()
-		while  not self.size:
+		while h.size:
 			w=h.extractMin()
 			for i in self.al[w.label]:
 				v=self.vertices[i]
@@ -132,8 +134,12 @@ def main():
 	g.construct()
 	g.getAl()
 	g.getAm()
-	si=int(input("Enter the source vertex for BFS:"))
-	g.BFS(g.vertices[si])
+	si=int(input("Enter the source vertex:"))
+	g.dijkstra(g.vertices[si])
+	l = 0
+	for i in g.vertices:
+		print('{:^3}{}{:^4}'.format(l," - ",i.dist))
+		l+=1
 
 if __name__ == '__main__':
 	main()

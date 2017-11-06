@@ -83,6 +83,14 @@ class Graph:
 					q.enqueue(v)
 				u.color="black"
 
+
+	def DFSF(self,u):
+		for i in g.vertices:
+			i.color='white'
+		for i in g.vertices:
+			if i.color=='white':
+				self.DFS(i)
+	
 	def DFS(self,u):
 		self.time += 1
 		u.start = self.time
@@ -105,7 +113,7 @@ def main():
 	g.time = 0
 	for i in g.vertices:
 		i.color='white'
-	g.DFS(g.vertices[0])
+	g.DFSF(g.vertices[0])
 
 if __name__ == '__main__':
 	main()
