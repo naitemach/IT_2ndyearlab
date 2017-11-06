@@ -1,0 +1,6 @@
+
+1|ash|hello
+2|ashwin|hello
+3|nayak|howru
+4|ASH|HELLO
+6|wassup|yo
