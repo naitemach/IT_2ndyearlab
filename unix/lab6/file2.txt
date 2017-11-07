@@ -1,6 +1,6 @@
-1|ash|hello
-2|ashwin|hello
+1|apple|hello
+2|prathik|hello
 3|nayak|howru
-4|ASH|HELLO
+4|cat|HELLO
 6|wassup|yo
 

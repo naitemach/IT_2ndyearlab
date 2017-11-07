@@ -85,9 +85,9 @@ class Graph:
 
 
 	def DFSF(self,u):
-		for i in g.vertices:
+		for i in self.vertices:
 			i.color='white'
-		for i in g.vertices:
+		for i in self.vertices:
 			if i.color=='white':
 				self.DFS(i)
 	

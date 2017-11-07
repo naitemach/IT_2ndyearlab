@@ -2,7 +2,7 @@ class Node:
 	def __init__ (self,l):
 		self.label=l
 		self.color=None
-		self.dist=None
+		self.dist=999999
 		self.pred=None
 
 class MinHeap(object):
@@ -54,9 +54,8 @@ class MinHeap(object):
 		else:
 			print("empty heap")
 	def updatePriority(self,v):
-		for j in range(1,self.size+2):
-			if self.array[j] == v:
-				i=j
+		for i in range(1,self.size+2):
+			if self.array[i] == v:
 				break
 		parent= i//2
 		if  not self.check(parent):
@@ -64,7 +63,7 @@ class MinHeap(object):
 			self.array[i] = self.array[parent]
 			self.array[parent] = temp
 		if parent//2 > 1:
-			self.updatePriority(parent//2)
+			self.updatePriority(self.array[parent//2])
 
 
 
@@ -122,10 +121,15 @@ class Graph:
 				v=self.vertices[i]
 				if w.dist + self.ew[w.label][v.label] < v.dist:
 					v.dist = w.dist + self.ew[w.label][v.label]
+					v.pred=w
+					#h.buildHeap()
 					h.updatePriority(v)
-
-
-
+	def printPath(self,v,s):
+		if v==s:
+			print(str(s.label),end=" -> ")
+		else:
+			self.printPath(v.pred,s)
+			print(str(v.label),end=" -> ")
 
 def main():
 	n=int(input("Enter the no of vertices: "))
@@ -135,11 +139,17 @@ def main():
 	g.getAl()
 	g.getAm()
 	si=int(input("Enter the source vertex:"))
+	di=int(input("Enter the destination vertex:"))
 	g.dijkstra(g.vertices[si])
+	print("The shortest distance from source to all vertices are:")
 	l = 0
 	for i in g.vertices:
 		print('{:^3}{}{:^4}'.format(l," - ",i.dist))
 		l+=1
+	print("The shortest path from source to destination is:")
+	g.printPath(g.vertices[di],g.vertices[si])
+	print()
+
 
 if __name__ == '__main__':
 	main()
