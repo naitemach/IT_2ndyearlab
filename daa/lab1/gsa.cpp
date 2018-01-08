@@ -21,6 +21,7 @@ bool wPrefersM1OverM(int prefer[2*N][N],int w,int m,int m1)
 		}
 	}
 }
+
 void stableMarriage(int prefer[2*N][N])
 {
 	int wPatner[N];
@@ -69,6 +70,7 @@ void stableMarriage(int prefer[2*N][N])
     	cout << " " << wPatner[i] << "\t" << i+N << endl;
     }
 }
+
 int main()
 {	
 
