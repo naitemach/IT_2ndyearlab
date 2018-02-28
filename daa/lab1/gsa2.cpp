@@ -4,7 +4,7 @@
 
 
 using namespace std;
-#define N 5
+#define N 4
 
 
 bool wPrefersM1OverM(int prefer[2*N][N],int w,int m,int m1)
@@ -77,20 +77,20 @@ void stableMarriage(int prefer[2*N][N],char men[N][10],char women[N][10])
 
 int main()
 {	
-    char men[N][10]={"Victor","Wyatt","Xavier","Yancy","Zeus"};
-	char women[N][10]={"Amy","Bertha","Clare","Diane","Erika"};
+    char men[N][10]={"0","1","2","3"};
+	char women[N][10]={"4","5","6","7"};
 
     int prefer[2*N][N] = { 
-    	{6,5,8,9,7},
-        {8,6,5,7,9},
-        {6,9,7,8,5},
-        {5,8,7,6,9},
-        {6,8,5,9,7},
-        {4,0,1,3,2},
-        {2,1,3,0,4},
-        {1,2,3,4,0},
-        {0,4,3,2,1},
-        {3,1,4,2,0},
+    	{7,5,6,4},
+        {5,4,6,7},
+        {4,5,6,7},
+        {4,5,7,6},
+        {0,1,2,3},
+        {0,1,2,3},
+        {0,1,2,3},
+       
+        {3,1,2,0},
+   
     };
     stableMarriage(prefer,men,women);
     return 0;
